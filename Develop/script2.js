@@ -2,10 +2,9 @@
 
     //ask how long should the password be
     
-    //MDN - propmt; alert; confirm
+    //consider propmts; alerts & confirmations
 
-
-    //give user choice:-
+    //give user choices:-
 
     //do you want UCase
     //var upperCase = ['A','B','C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X','Y', 'Z']
@@ -20,7 +19,8 @@
 
     //do you want special characters
     //var specialCharacters = [ '@', '%', '+', '\\',  '/',  '!', '#', '$',  '^', '?',  ':', ',',  ')', '(', '}', '{',  ']',  '[',  '~',  '-',  '_',  '.']
-
+    
+    // combine arrays - concatenation
 
     //my alerts give popup messages to user
 
