@@ -12,27 +12,88 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 //do you want to use special characters
-var specialCharacters = [ '@', '%', '+', '\\',  '/',  '!', '#', '$',  '^', '?',  ':', ',',  ')', '(', '}', '{',  ']',  '[',  '~',  '-',  '_',  '.']
+var symbols = [ '@', '%', '+', '\\',  '/',  '!', '#', '$',  '^', '?',  ':', ',',  ')', '(', '}', '{',  ']',  '[',  '~',  '-',  '_',  '.']
+
 
 
 var generateBtn = document.querySelector("#generate");//id selector = html line 28
 
 function generatePassword(){
-  var passwordLength = prompt ("how many characters would you like in your password?")
-  console.log(passwordLength)
-//if password <8 alert, if password >128 alert
+  //parseInt applied to prompt to convert any string values to numeric value
+  var passwordLength = parseInt(prompt ("How many characters you would like your password to have?"))
+  
+  //validating password ie that it is the correct length 
+  //validating password ie that a number not alpha has been used to choose password length
+
+  if (Number.isNaN (passwordLength)){
+    alert("Your entry is invalid, please re-enter a valid number")
+
+    return //stops the code being processed beyond this point. 
+  }
+  
+  if (passwordLength < 8 ){
+    alert("Your choice is invalid, please enter a number that is greater than 8")
+    return
+  }
+
+  if (passwordLength > 128 ){
+    alert("Your choice is invalid, please enter a number that is less than 128")
+    return
+  }
+
+  var confirmUpCase = confirm ("Would you like to use upper case letters in your password? Press ok to confirm or cancel to ignore");
+    
+      // confirmUpCase = confirm = "ok", decline = "cancel");
+      if (confirmUpCase) {
+        alert ("Upper Case selected");
+      } else {
+        alert("Upper Case not Selected");
+      }
+
+    // }
+  
+  var confirmLowCase = confirm("Would you like to use lower case letters in your password? Press ok to confirm or cancel to ignore");
+    
+    if (confirmLowCase){
+    alert ("Lower Case Selected");
+    } else {
+    alert ("Lower Case not Selected");
+    }
+  
+  var confirmNumbers = confirm("Would you like to use numbers in your password? Press ok to confirm or cancel to ignore");
+  
+    if (confirmNumbers){
+    alert ("Numbers Selected");
+    } else {
+    alert ("Numbers not Selected");
+    }
+
+
+  var confirmSymbols = confirm("Would you like to use symbols in your password? Press ok to confirm or cancel to ignore");
+
+  if (confirmSymbols){
+    alert ("Symbols Selected");
+  } else {
+    alert ("Symbols not Selected");
+  }
+
+
 
   //for loop allowing the selection of the characters from the array of characters.
+  //var characters = upperCase.concat(lowerCase, numbers, symbols);
+  
   for(var i, i = 0; i < characters.length; i++){
-    generatePassword += characters.charAt(math.floor(math.random() * characters.length))
+    generatePassword += characters.charAt(math.random() * characters.length)
 }
+
+
+
 };
+
+// var generatePassword = upperCase.concat(lowerCase, numbers, symbols);
 // Write password to the #password input
 function writePassword() {
   
-  //declaring characters elibible to be used in random password generator
-  //var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz!@€$%^&*()+-:<>?/|\{}";//why are 2 chars blue?
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");//id selector = html line 22 
 
