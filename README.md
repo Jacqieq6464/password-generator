@@ -14,4 +14,5 @@ Using Java Script to create a password generator
                 Symbols
         * Create alert to notify user if password is less than 8 or more than 128 characters
         * Create an alert if the user users an invalid entry for password length
-        * 
+        * Link to GitHub: https://github.com/Jacqieq6464/password-generator.git
+        * Link to Git Pages: https://jacqieq6464.github.io/password-generator/ 
